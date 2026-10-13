@@ -27,7 +27,7 @@ internal sealed class LauncherForm : Form
 {
     private const string Repository = "brunoian1/NewHorizonOTCV8";
     private const string ReleaseTag = "client-latest";
-    private const string PackageName = "VTC.VELKHARA.zip";
+    private const string PackageName = "NewHorizons.zip";
     private const string VersionName = "client-version.txt";
     private const string SettingsName = "launcher-renderer.txt";
     private const string DirectXExecutable = "bin\\otclient_dx.exe";

@@ -75,7 +75,7 @@ internal sealed class PackagerConfig
     public string GitHubReleaseTag { get; set; } = "client-latest";
     public string GitHubReleaseTitle { get; set; } = "VTC Velkhara - Client Atualizado";
     public string GitHubReleaseUrl { get; set; } = "https://github.com/brunoian1/NewHorizonOTCV8/releases/tag/client-latest";
-    public string ZipName { get; set; } = "VTC.VELKHARA.zip";
+    public string ZipName { get; set; } = "NewHorizons.zip";
     public List<string> Items { get; set; } = [];
     public List<string> Excludes { get; set; } = [];
 }
@@ -838,12 +838,12 @@ internal static class PackagerConfigFile
             GitHubReleaseTag = ReadString(text, "githubReleaseTag") ?? "client-latest",
             GitHubReleaseTitle = ReadString(text, "githubReleaseTitle") ?? "VTC Velkhara - Client Atualizado",
             GitHubReleaseUrl = ReadString(text, "githubReleaseUrl") ?? "",
-            ZipName = ReadString(text, "zipName") ?? "VTC.VELKHARA.zip",
+            ZipName = ReadString(text, "zipName") ?? "NewHorizons.zip",
             Items = ReadList(text, "items"),
             Excludes = ReadList(text, "exclude")
         };
         if (config.Items.Count == 0)
-            config.Items.AddRange(["data", "layouts", "mods", "modules", "init.lua"]);
+            config.Items.AddRange(["data", "layouts", "mods", "modules", "init.lua", "d3dcompiler_47.dll", "libEGL.dll", "libGLESv2.dll", "otclient_dx.exe", "otclient_gl.exe", "VelkharaLauncher.exe"]);
         if (string.IsNullOrWhiteSpace(config.GitHubReleaseUrl))
             config.GitHubReleaseUrl = PackagerEngine.BuildReleaseUrl(config.GitHubRepository, config.GitHubReleaseTag);
         return config;
