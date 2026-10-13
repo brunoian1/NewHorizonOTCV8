@@ -71,10 +71,10 @@ internal sealed class PackagerConfig
     public string Destination { get; set; } = "VTC VELKHARA";
     public bool ClearDestination { get; set; } = true;
     public bool PublishGitHub { get; set; } = true;
-    public string GitHubRepository { get; set; } = "brunoian1/VelkharaVTC";
+    public string GitHubRepository { get; set; } = "brunoian1/NewHorizonOTCV8";
     public string GitHubReleaseTag { get; set; } = "client-latest";
     public string GitHubReleaseTitle { get; set; } = "VTC Velkhara - Client Atualizado";
-    public string GitHubReleaseUrl { get; set; } = "https://github.com/brunoian1/VelkharaVTC/releases/tag/client-latest";
+    public string GitHubReleaseUrl { get; set; } = "https://github.com/brunoian1/NewHorizonOTCV8/releases/tag/client-latest";
     public string ZipName { get; set; } = "VTC.VELKHARA.zip";
     public List<string> Items { get; set; } = [];
     public List<string> Excludes { get; set; } = [];
@@ -834,7 +834,7 @@ internal static class PackagerConfigFile
             Destination = ReadString(text, "destination") ?? "VTC VELKHARA",
             ClearDestination = ReadBool(text, "clearDestination") ?? true,
             PublishGitHub = ReadBool(text, "publishGitHub") ?? true,
-            GitHubRepository = ReadString(text, "githubRepository") ?? "brunoian1/VelkharaVTC",
+            GitHubRepository = ReadString(text, "githubRepository") ?? "brunoian1/NewHorizonOTCV8",
             GitHubReleaseTag = ReadString(text, "githubReleaseTag") ?? "client-latest",
             GitHubReleaseTitle = ReadString(text, "githubReleaseTitle") ?? "VTC Velkhara - Client Atualizado",
             GitHubReleaseUrl = ReadString(text, "githubReleaseUrl") ?? "",

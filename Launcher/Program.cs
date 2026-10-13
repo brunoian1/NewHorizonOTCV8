@@ -25,7 +25,7 @@ internal static class Program
 
 internal sealed class LauncherForm : Form
 {
-    private const string Repository = "brunoian1/VelkharaVTC";
+    private const string Repository = "brunoian1/NewHorizonOTCV8";
     private const string ReleaseTag = "client-latest";
     private const string PackageName = "VTC.VELKHARA.zip";
     private const string VersionName = "client-version.txt";
