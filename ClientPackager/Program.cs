@@ -843,7 +843,7 @@ internal static class PackagerConfigFile
             Excludes = ReadList(text, "exclude")
         };
         if (config.Items.Count == 0)
-            config.Items.AddRange(["data", "data/minimap1098.otmm", "layouts", "mods", "modules", "init.lua", "bin", "VelkharaLauncher.exe"]);
+            config.Items.AddRange(["data", "layouts", "mods", "modules", "init.lua"]);
         if (string.IsNullOrWhiteSpace(config.GitHubReleaseUrl))
             config.GitHubReleaseUrl = PackagerEngine.BuildReleaseUrl(config.GitHubRepository, config.GitHubReleaseTag);
         return config;
