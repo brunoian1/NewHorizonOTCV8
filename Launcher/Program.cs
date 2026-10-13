@@ -14,7 +14,7 @@ internal static class Program
     {
         if (args.Contains("--launcher-version", StringComparer.OrdinalIgnoreCase))
         {
-            MessageBox.Show("Velkhara Launcher 3.0.0", "Versao do launcher");
+            MessageBox.Show("New Horizons Launcher 1.0.0", "Versao do launcher");
             return;
         }
 
@@ -56,7 +56,7 @@ internal sealed class LauncherForm : Form
 
     public LauncherForm()
     {
-        Text = "Velkhara OT";
+        Text = "New Horizons";
         AutoScaleMode = AutoScaleMode.None;
         ClientSize = new Size(900, 530);
         MinimumSize = new Size(900, 530);
@@ -72,7 +72,7 @@ internal sealed class LauncherForm : Form
         var header = new Panel { BackColor = Color.FromArgb(25, 22, 19), Location = new Point(0, 0), Size = new Size(900, 44) };
         var mark = new Label
         {
-            Text = "V",
+            Text = "N",
             Font = new Font("Georgia", 13F, FontStyle.Bold),
             ForeColor = Color.FromArgb(205, 151, 72),
             AutoSize = false,
@@ -80,7 +80,7 @@ internal sealed class LauncherForm : Form
             Location = new Point(10, 5),
             Size = new Size(30, 32)
         };
-        var windowTitle = new Label { Text = "Velkhara OT Launcher", ForeColor = Color.FromArgb(220, 214, 203), BackColor = Color.Transparent, AutoSize = false, TextAlign = ContentAlignment.MiddleLeft, Location = new Point(42, 0), Size = new Size(300, 42) };
+        var windowTitle = new Label { Text = "New Horizons Launcher", ForeColor = Color.FromArgb(220, 214, 203), BackColor = Color.Transparent, AutoSize = false, TextAlign = ContentAlignment.MiddleLeft, Location = new Point(42, 0), Size = new Size(300, 42) };
         var minimize = CreateTitleButton("—", 730);
         var close = CreateTitleButton("×", 780);
         minimize.Click += (_, _) => WindowState = FormWindowState.Minimized;
@@ -96,7 +96,7 @@ internal sealed class LauncherForm : Form
         {
             Location = new Point(0, 44),
             Size = new Size(900, 366),
-            BackgroundImage = LoadEmbeddedImage("VelkharaBackground.png"),
+            BackgroundImage = LoadEmbeddedImage("NewHorizonsBackground.png"),
             BackgroundImageLayout = ImageLayout.Stretch,
             BackColor = Color.FromArgb(15, 14, 12)
         };
@@ -117,7 +117,7 @@ internal sealed class LauncherForm : Form
         };
         var title = new Label
         {
-            Text = "Velkhara OT",
+            Text = "New Horizons",
             Font = new Font("Segoe UI", 26F),
             ForeColor = Color.FromArgb(237, 229, 213),
             BackColor = Color.Transparent,
@@ -290,7 +290,7 @@ internal sealed class LauncherForm : Form
 
     private static Image? LoadEmbeddedLogo()
     {
-        using var stream = typeof(Program).Assembly.GetManifestResourceStream("VelkharaLogo.png");
+        using var stream = typeof(Program).Assembly.GetManifestResourceStream("NewHorizonsLogo.png");
         if (stream is null) return null;
         using var source = Image.FromStream(stream);
         return new Bitmap(source);
@@ -409,7 +409,7 @@ internal sealed class LauncherForm : Form
 
     private async Task InstallUpdate(string remoteVersion)
     {
-        var tempRoot = Path.Combine(Path.GetTempPath(), "velkhara-update-" + Guid.NewGuid().ToString("N"));
+        var tempRoot = Path.Combine(Path.GetTempPath(), "new-horizons-update-" + Guid.NewGuid().ToString("N"));
         var zipPath = Path.Combine(tempRoot, PackageName);
         var extractPath = Path.Combine(tempRoot, "files");
         Directory.CreateDirectory(tempRoot);
@@ -575,7 +575,7 @@ internal sealed class LauncherForm : Form
 
     private static void CopyUpdate(string source, string destination)
     {
-        var launcherName = Path.GetFileName(Environment.ProcessPath ?? "VelkharaLauncher.exe");
+        var launcherName = Path.GetFileName(Environment.ProcessPath ?? "NewHorizonsLauncher.exe");
         foreach (var file in Directory.EnumerateFiles(source, "*", SearchOption.AllDirectories))
         {
             var relative = Path.GetRelativePath(source, file);
@@ -616,7 +616,7 @@ internal sealed class LauncherForm : Form
     private static HttpClient CreateHttpClient()
     {
         var client = new HttpClient { Timeout = TimeSpan.FromMinutes(15) };
-        client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("VelkharaLauncher", "3.0"));
+        client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("NewHorizonsLauncher", "1.0"));
         return client;
     }
 }

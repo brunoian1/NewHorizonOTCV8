@@ -5,7 +5,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>VelkharaLauncher</AssemblyName>
+    <AssemblyName>NewHorizonsLauncher</AssemblyName>
+    <RootNamespace>NewHorizonsLauncher</RootNamespace>
+    <Product>New Horizons Launcher</Product>
+    <Title>New Horizons Launcher</Title>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <SelfContained>true</SelfContained>
     <PublishSingleFile>true</PublishSingleFile>
@@ -14,7 +17,7 @@
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\logo.png" LogicalName="VelkharaLogo.png" />
-    <EmbeddedResource Include="Assets\background.png" LogicalName="VelkharaBackground.png" />
+    <EmbeddedResource Include="Assets\new-horizons-logo.png" LogicalName="NewHorizonsLogo.png" />
+    <EmbeddedResource Include="Assets\background.png" LogicalName="NewHorizonsBackground.png" />
   </ItemGroup>
 </Project>
