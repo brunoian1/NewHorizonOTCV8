@@ -843,7 +843,7 @@ internal static class PackagerConfigFile
             Excludes = ReadList(text, "exclude")
         };
         if (config.Items.Count == 0)
-            config.Items.AddRange(["data", "layouts", "mods", "modules", "init.lua", "d3dcompiler_47.dll", "libEGL.dll", "libGLESv2.dll", "otclient_dx.exe", "otclient_gl.exe", "VelkharaLauncher.exe"]);
+            config.Items.AddRange(["data", "layouts", "mods", "modules", "init.lua", "d3dcompiler_47.dll", "libEGL.dll", "libGLESv2.dll", "otclient_dx.exe", "otclient_gl.exe"]);
         if (string.IsNullOrWhiteSpace(config.GitHubReleaseUrl))
             config.GitHubReleaseUrl = PackagerEngine.BuildReleaseUrl(config.GitHubRepository, config.GitHubReleaseTag);
         return config;
